@@ -1,0 +1,102 @@
+======================================================
+RELATÓRIO DO TRABALHO PRÁTICO 2 - LABORATÓRIO DE PROGRAMAÇÃO
+Normalização de Texto com Pipeline de Pré-Processamento e SLMs
+======================================================
+
+GRUPO:
+- Matilde Vieira - al2025157514
+- Ana Sofia Marques - al2025153705
+- Joana Esteves - al2025161031
+------------------------------------------------------
+1. O QUE FOI FEITO
+------------------------------------------------------
+
+Foi desenvolvida uma aplicação web em Python com Flask que permite
+carregar documentos em vários formatos e processá-los através de uma
+pipeline de pré-processamento de texto.
+
+A aplicação cobre as tarefas 1, 2 e 3 do enunciado:
+
+  - Tarefa 1: Upload e extração de texto bruto de ficheiros PDF, DOCX e TXT,
+    preservando artefactos, quebras de linha e inconsistências originais.
+
+  - Tarefa 2: Pipeline configurável de limpeza com 5 etapas que o utilizador
+    pode ligar ou desligar individualmente. A aplicação mostra o texto
+    antes e depois de cada etapa.
+
+  - Tarefa 3: Após a limpeza, o texto é segmentado em chunks, é detetado
+    o idioma automaticamente, e são gerados prompts adequados para cada chunk.
+
+------------------------------------------------------
+2. COMO FUNCIONA A APLICAÇÃO
+------------------------------------------------------
+
+O utilizador acede à aplicação pelo browser em http://127.0.0.1:5000.
+
+Passos de utilização:
+  1. Carrega um ficheiro (PDF, DOCX ou TXT) pela zona de upload.
+  2. O texto bruto é extraído e mostrado no separador "Texto Original",
+     com estatísticas (nº de caracteres, palavras, linhas).
+  3. O utilizador seleciona as etapas da pipeline que quer aplicar
+     (na barra lateral) e define o tamanho dos chunks.
+  4. Carrega em "Executar Pipeline".
+  5. Pode ver o resultado em 3 separadores:
+       - Pipeline: resultado de cada etapa individualmente
+       - Comparação: texto antes vs depois lado a lado
+       - Chunks & Prompts: os blocos de texto e os prompts gerados
+
+------------------------------------------------------
+3. ETAPAS DA PIPELINE
+------------------------------------------------------
+
+Etapa 1 - Remoção de Artefactos:
+  Remove caracteres de controlo, bytes inválidos de encoding e
+  normaliza o texto para formato Unicode NFC.
+
+Etapa 2 - Remoção de Cabeçalhos/Rodapés:
+  Deteta linhas que se repetem mais de 2 vezes no documento
+  (tipicamente cabeçalhos e rodapés) e remove-as.
+
+Etapa 3 - Remoção de Quebras Incorretas:
+  Junta palavras que foram separadas por hifenização no fim de linha
+  (ex: "Enge-\nnharia" → "Engenharia").
+
+Etapa 4 - Reconstrução de Parágrafos:
+  Junta linhas que pertencem ao mesmo parágrafo, identificando
+  fronteiras por pontuação ou comprimento da linha.
+
+Etapa 5 - Normalização de Espaços e Pontuação:
+  Remove espaços duplos, normaliza aspas e travessões, e limita
+  linhas em branco consecutivas a no máximo 2.
+
+------------------------------------------------------
+4. PREPARAÇÃO DO INPUT PARA O MODELO (Tarefa 3)
+------------------------------------------------------
+
+Após a limpeza, o texto é dividido em chunks de tamanho configurável
+(padrão: 800 palavras, com sobreposição de 100 palavras entre chunks).
+
+O idioma é detetado automaticamente com a biblioteca langdetect.
+Consoante o idioma detetado (pt, en, es, etc.), é gerado um template
+de prompt diferente para cada chunk, pronto a ser enviado ao modelo.
+
+------------------------------------------------------
+5. TECNOLOGIAS USADAS
+------------------------------------------------------
+
+  - Python 3.x
+  - Flask (servidor web)
+  - pdfplumber (extração de texto de PDFs)
+  - python-docx (extração de texto de DOCX)
+  - langdetect (deteção de idioma)
+  - HTML + CSS + JavaScript (interface web, sem frameworks externos)
+
+------------------------------------------------------
+6. COMO CORRER O PROJETO
+------------------------------------------------------
+
+  1. pip install -r requirements.txt
+  2. python app.py
+  3. Abrir http://127.0.0.1:5000 no browser
+
+======================================================

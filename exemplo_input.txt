@@ -1,0 +1,51 @@
+Relatório de Estágio Curricular – Engenharia Informática
+V1.1 | 20260408
+Universidade de Trás-os-Montes e Alto Douro
+
+1. Introdução
+
+Este relatório descreve  as actividades desenvolvidas  durante o período de
+estágio curricular na empresa XYZ Lda., no âmbito da  Licenciatura em Enge-
+nharia Informática. O estágio decorreu entre  Janeiro e Abril de 2026, com du-
+ração total de 400 horas.
+
+V1.1 | 20260408
+
+2. Objectivos do Estágio
+
+Os principais objectivos  definidos no início do estágio foram os seguintes:
+Desenvolver competências práticas em  desenvolvimento web e mobile.
+Participar em projectos reais  com equipa multidisciplinar.
+Aplicar conhecimentos de  base de dados  e APIs REST.
+
+
+O estagiário foi integrado  na equipa de desenvolvimento  backend,  sendo res-
+ponsável pela manutenção e melhoria de  microserviços existentes na platafor-
+ma da empresa.
+
+V1.1 | 20260408
+
+3. Tecnologias Utilizadas
+
+Durante o estágio foram utilizadas diversas tecnologias,   nomeadamente:
+Python 3.11  com framework  FastAPI para desenvolvimento de APIs.
+PostgreSQL  como sistema  de gestão de base de dados relacional.
+Docker   e   Docker Compose   para containerização dos serviços.
+Git e GitHub   para controlo de versões  e colaboração em equipa.
+
+4. Resultados e Conclusões
+
+Os resultados obtidos  foram bastante positivos.   O estagiário concluiu com
+sucesso  as tarefas propostas,  tendo contribuído  para a melhoria de 3 micro-
+serviços críticos  da plataforma.   A experiência  permitiu consolidar conheci-
+mentos teóricos   e desenvolver  competências   transversais   importantes para
+o mercado de trabalho.
+
+V1.1 | 20260408
+
+Em suma,  o estágio  foi uma experiência  enriquecedora  que correspondeu  às
+expectativas  iniciais.   Recomenda-se  a  continuação  desta  parceria  entre  a
+universidade  e a empresa  XYZ Lda.   para  futuras  edições  do estágio  curri-
+cular.
+
+V1.1 | 20260408
