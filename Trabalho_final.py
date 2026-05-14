@@ -2,6 +2,7 @@
 =============================================================================
 LABORATÓRIO DE PROGRAMAÇÃO – 1º ANO | ENGENHARIA INFORMÁTICA
 Normalização de Texto com Pipeline de Pré-Processamento e SLMs
+Trabalho realizado por Matilde, Sofia e Joana
 =============================================================================
 ESTRUTURA DO FICHEIRO:
   - ETAPA 1: Extração de Texto Multi-formato (linha ~60)
